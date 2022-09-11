@@ -153,9 +153,9 @@ export default class Graph extends Vue {
       .attr("d", ribbonGenerator)
       .style("fill", (d, i) =>
       {
-        console.log ("pair" +  this.Pair(d.source.index + 1, d.target.index + 1));
         return d3.interpolateInferno(
-          this.Pair(d.source.index + 1, d.target.index + 1) / maxUnique
+          d.source.value /maxUnique
+          //this.Pair(d.source.index + 1, d.target.index + 1) / maxUnique
         )
         // d3.interpolateRainbow(
         //   (d.source.index+d.target.index) / (2 * this.ClanMembers.length)
