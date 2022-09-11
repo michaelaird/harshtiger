@@ -5,7 +5,7 @@
           <b-input
       id="inline-form-input-name"
       class="mb-2 mr-sm-2 mb-sm-0"
-      placeholder="gladd"
+      placeholder=""
       v-model.trim="guardian" 
     ></b-input>
     <b-button variant="primary" v-on:click="loadClan">Load</b-button>
