@@ -89,6 +89,7 @@ export default class Graph extends Vue {
         if (activitiesInCommon > maxInteractions)
         {
           maxInteractions = activitiesInCommon;
+          console.log ("maxInteractions :"+ maxInteractions);
         }
 
         matrix[index][compareIndex] = activitiesInCommon;
@@ -137,8 +138,6 @@ export default class Graph extends Vue {
 
     let ribbonGenerator = d3.ribbon<any, any>().radius(350);
 
-    let maxUnique = this.Pair(clanMates.length + 1, clanMates.length + 1);
-
     // Add the links between groups
     this.svg
       .datum(res)
@@ -154,7 +153,7 @@ export default class Graph extends Vue {
       .style("fill", (d, i) =>
       {
         return d3.interpolateInferno(
-          d.source.value /maxUnique
+          d.source.value /maxInteractions
           //this.Pair(d.source.index + 1, d.target.index + 1) / maxUnique
         )
         // d3.interpolateRainbow(
